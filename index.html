@@ -5,8 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training JS 2021</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="page-head">
+        <div class="container">
+            <h1>Exercise JS Day 1</h1>
+        </div>
+    </header>
+    <main class="page-main">
+        <div class="container">
+            <section class="section-question">
+                <h2 class="question-title"> Câu 1 :  Sự khác biệt giữa biến 'null' và 'undefined' là gì?</h2>
+                <div class="answer">
+                   <p>- Khi khai báo biến có gí trị là 'null' thì có nghĩa là giá trị là rỗng hoặc không tồn tại.</p>
+                   <p> - Khi khai báo biến trong JS mà không gán giá trị nào cho biến đó, thì biến đó sẽ nhận giá trị 'undefined'. </p>
+                </div>
+            </section>
+
+            <section class="section-question">
+                <h2 class="question-title"> Câu 2 : Use strict là gì? Những lợi thế và bất lợi khi sử dụng nó là gì?</h2>
+                <div class="answer">
+                    <p>- <b>Use strict</b> dịch sang tiếng việt thì có nghĩa là sử dụng sự nghiêm ngặt. Khi một đoạn lệnh được khai báo <b>use strict</b> 
+                       thì tất cả các dòng code ở phía dưới dòng khai báo use strict sẽ được quản lý một cách nghiêm ngặt hơn về cú pháp</p>
+                    <p>- Lợi thế : giúp việc ràng buộc code chặt chẽ và rõ ràng hơn </p>
+                    <p> - Hạn chế : </p>
+                    <ul>
+                        <li>Không thể sử dụng một biến mà không khai báo</li>
+                        <li>Các tham số của một hàm không được phép trùng nhau</li>
+                        <li>Không sử dụng được cách viết số thuộc hệ bát phân với tiền tố là 0Không thể sử dụng with</li>
+                        <li>Không thể sử dụng with</li>
+                        <li>Báo lỗi khi delete những thứ không thể xoá</li>
+                    </ul>
+                   </p>
+                </div>
+            </section>
+
+            <section class="section-question">
+                <h2 class="question-title"> Câu 3 : Sự khác biệt giữa '==' và '===' là gì?</h2>
+                <div class="answer">
+                   <p>- Toán tử "==" dùng để so sánh giá trị của 2 biến</p>
+                   <p>- Toán tử "===" dùng để so sánh giá trị và kiểu dữ liệu của 2 biến</p>
+                </div>
+            </section>
+
+            <section class="section-question">
+                <h2 class="question-title"> Câu 4 : Danh sách các giá trị "falsy" trong Javascript là gì?</h2>
+                <div class="answer">
+                   <p>- Các gí trị "falsy" trong Javascript là :</p>
+                   <ul>
+                       <li>undefined</li>
+                       <li>null</li>
+                       <li>false</li>
+                       <li>NaN</li>
+                       <li>''</li>
+                       <li>0</li>
+                       <li>-0</li>
+                       <li>0n</li>
+                   </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    
     <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
