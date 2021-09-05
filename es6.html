@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training JS 2021</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-head">
+        <div class="container">
+            <h1>Exercise JS Day 3 - ES6</h1>
+        </div>
+    </header>
+    <main class="page-main">
+        <div class="container">
+            <section class="section-question">
+                <h2 class="question-title"> Câu 1 :  Sự khác biệt giữa 'let' và 'const' là gì?</h2>
+                <div class="answer">
+                   <p><b>a. Biến "let" :</b></p>
+                   <p>- Những biến được khai báo là "let" thì sẽ có scope là <b>block scoped</b> chứ không phải globally hay locally scoped. </p>
+                   <p>- "Let" cho phép chúng ta cập nhật lại biến đó chứ không tái khai báo lại biến đó.</p>
+                   <p><b>b. Biến "const" :</b></p>
+                   <p>- Khi khai báo biến là "const" thì nó cũng sẽ tương tự như "let", cũng co scope là <b>block scoped</b>. 
+                   <p>- Trong biến const nếu trường hợp kiểu của biến là primitive (bao gồm string, number, boolean, null, và undefined) thì chúng ta sẽ không thể tái khai báo hay cập nhật giá trị mới để thay thế cho giá trị trước đó của biến. </p>
+                   <p>- Đối với trường hợp kiểu biến là reference (bao gồm object, array, và function) thì tuy không thể tái khai báo hay cập nhật giá trị của biến nhưng chúng ta vẫn có thể cập nhật giá trị cho thuộc tính của biến đó. </p>
+                   <p><b>c. Chuyển ES5 -> ES6 :</b></p>
+                   <table>
+                    <tr>
+                      <th>ES5</th>
+                      <th>ES6</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>
+                                var MAX_SIZE = 25 * 1024 * 1024; 
+                                var title = 'Hello World'; 
+                                title = 'Hello ES6'
+                            </code>
+                        </td>
+                        <td>
+                            <code>
+                                const MAX_SIZE = 25 * 1024 * 1024;
+                                let title = 'Hello World';
+                                title = 'Hello ES6'
+                            </code>
+                        </td>
+                    </tr>
+                  </table>
+                </div>
+            </section>
+
+            <section class="section-question">
+                <h2 class="question-title"> Câu 2 : String Interpolation </h2>
+                <div class="answer">
+                    <p><b>Chuyển ES5 -> ES6 :</b></p>
+                    <table>
+                        <tr>
+                          <th>ES5</th>
+                          <th>ES6</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>
+                                    var user = { name: 'David' }; 
+                                    var card = { amount: 7, product: "Bar", unitprice: 42 };
+                                    var message = "Hello " + user.name + ",\n" + 
+                                    "want to buy " + card.amount + " " + card.product + " for\n" + 
+                                    "a total of " + (card.amount * card.unitprice) + " bucks?";
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    const user = { name: 'David' }; 
+                                    const card = { amount: 7, product: "Bar", unitprice: 42 }; 
+                                    const message = `Hello ${user.name},\nwant to buy ${card.amount} 
+                                    ${card.product} for\na total of ${card.amount * card.unitprice} bucks?`; 
+                                </code>
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+            </section>
+
+            <section class="section-question">
+                <h2 class="question-title"> Câu 3 : Rest Parameter</h2>
+                <div class="answer">
+                    <p><b>Chuyển ES5 -> ES6 :</b></p>
+                    <table>
+                        <tr>
+                          <th>ES5</th>
+                          <th>ES6</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>
+                                    function foo(x, y) { 
+                                        var a = Array.prototype.slice.call(arguments, 2); 
+                                        return (x + y) * a.length; 
+                                    }; 
+                                    foo(1, 2, 'hello', true, 7) === 9;
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    function foo (x, y, ...a) {
+                                        return (x + y) * a.length
+                                    }
+                                    foo(1, 2, 'hello', true, 7) === 9;
+                                </code>
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+            </section>
+
+            <section class="section-question">
+                <h2 class="question-title"> Câu 4 : Default Parameter Values</h2>
+                <div class="answer">
+                    <p><b>Chuyển ES5 -> ES6 :</b></p>
+                    <table>
+                        <tr>
+                          <th>ES5</th>
+                          <th>ES6</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>
+                                    function sum(x, y, z) {
+                                        if (y === undefined) {
+                                          y = 7;
+                                        }
+                                        if (z === undefined) {
+                                          z = 42;
+                                        }
+                                        return x + y + z;
+                                      };
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    function sum(x, y=7, z=42) {
+                                        return x + y + z;
+                                      };
+                                </code>
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+            </section>
+
+            <section class="section-question">
+                <h2 class="question-title"> Câu 5 : Arrow Functions</h2>
+                <div class="answer">
+                    <p><b>Chuyển ES5 -> ES6 :</b></p>
+                    <table>
+                        <tr>
+                          <th>ES5</th>
+                          <th>ES6</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>
+                                    var evens = [1, 2, 3, 4, 5, 6];
+                                    var odds  = evens.map(function (v) { return v + 1; });
+                                    var pairs = evens.map(function (v) { return { even: v, odd: v + 1 }; });
+                                    var nums  = evens.map(function (v, i) { return v + i; });
+                                    var fives = [];
+                                    nums.forEach(function (v) {
+                                        if (v % 5 === 0) {
+                                        fives.push(v);
+                                        }
+                                    });
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    const evens = [1, 2, 3, 4, 5, 6];
+                                    const odds  = evens.map(v => v + 1);
+                                    const pairs = evens.map(v => ({
+                                      even: v,
+                                      odd: v + 1
+                                    }));
+                                    const nums  = evens.map((v, i) => v + i);
+                                    const fives = [];
+                                    nums.forEach(v => {
+                                      if (v % 5 === 0) {
+                                        fives.push(v);
+                                      }
+                                    });
+                                </code>
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+            </section>
+            <section class="section-question">
+                <h2 class="question-title"> Câu 6 : Classes</h2>
+                <div class="answer">
+                    <p><b>Chuyển ES5 -> ES6 :</b></p>
+                    <table>
+                        <tr>
+                          <th>ES5</th>
+                          <th>ES6</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>
+                                    var Shape = function(id, x, y) {
+                                        this.id = id;
+                                        this.move(x, y);
+                                      };
+                                      Shape.prototype.move = function(x, y) {
+                                        this.x = x;
+                                        this.y = y;
+                                      };
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    class Shape {
+                                        constructor(id, x, y) {
+                                          this.id = id;
+                                          this.move(x, y);
+                                        }
+                                    
+                                        move(x, y) {
+                                          this.x = x;
+                                          this.y = y;
+                                        }
+                                      }
+                                </code>
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+            </section>
+            <section class="section-question">
+                <h2 class="question-title"> Câu 7 : Modules</h2>
+                <div class="answer">
+                    <p><b>Chuyển ES5 -> ES6 :</b></p>
+                    <table>
+                        <tr>
+                          <th>ES5</th>
+                          <th>ES6</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>
+                                    //  lib/utils.js
+                                    Utils = {};
+                                    Utils.sum = function(x, y) { return x + y };
+                                    Utils.pi = 3.141593;
+
+                                    //  someApp.js
+                                    var math = Utils;
+                                    console.log("2π = " + math.sum(math.pi, math.pi));
+
+                                    //  otherApp.js
+                                    var sum = Utils.sum, pi = Utils.pi;
+                                    console.log('2π = ' + sum(pi, pi));
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    //  lib/utils.js
+                                    Utils = {};
+                                    Utils.sum = (x, y) => x + y;
+                                    Utils.pi = 3.141593;
+
+                                    //  someApp.js
+                                    const math = Utils;
+                                    console.log(`2π = ${math.sum(math.pi, math.pi)}`);
+
+                                    //  otherApp.js
+                                    const sum = Utils.sum;
+
+                                    const pi = Utils.pi;
+                                    console.log(`2π = ${sum(pi, pi)}`);
+                                </code>
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+            </section>
+            <section class="section-question">
+                <h2 class="question-title"> Câu 8 : Promise</h2>
+                <div class="answer">
+                    <p><b>Chuyển ES5 -> ES6 :</b></p>
+                    <table>
+                        <tr>
+                          <th>ES5</th>
+                          <th>ES6</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>
+                                    function showMessAfterTimeout(msg, who, timeout, onDone) {
+                                        setTimeout(function () {
+                                          onDone(msg + ' Hi ' + who + '!');
+                                        }, timeout);
+                                      }
+                                      showMessAfterTimeout('', 'Foo', 100, function(msg) {
+                                        showMessAfterTimeout(msg, 'Bar', 200, function(msg) {
+                                          console.log('Finish after 300ms:' + msg);
+                                        });
+                                      });
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    function showMessAfterTimeout(msg, who, timeout, onDone) {
+                                        setTimeout(() => {
+                                          onDone(`${msg} Hi ${who}!`);
+                                        }, timeout);
+                                      }
+                                      showMessAfterTimeout('', 'Foo', 100, msg => {
+                                        showMessAfterTimeout(msg, 'Bar', 200, msg => {
+                                          console.log(`Finish after 300ms:${msg}`);
+                                        });
+                                      });
+                                </code>
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+            </section>
+            <section class="section-question">
+                <h2 class="question-title"> Câu 9 : Loops</h2>
+                <div class="answer">
+                    <table>
+                        <tr>
+                          <th>for…of</th>
+                          <th>findIndex()</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>
+                                    let students = [
+                                        {
+                                            name : 'Tuan',
+                                            age : 20
+                                        },
+                                        {
+                                            name : 'Minh',
+                                            age : 22
+                                        },
+                                        {
+                                            name : 'Thien',
+                                            age : 19
+                                        },
+                                    ];
+                                    for (student of students) {
+                                        console.log(student.name); //Tuan, Minh, Thien
+                                    }
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    var ages = [3, 10, 18, 20];
+                                    function checkAdult(age) {
+                                        return age >= 18;
+                                    }
+                                    console.log(ages.findIndex(checkAdult)); //2
+                                </code>
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+</body>
+</html>

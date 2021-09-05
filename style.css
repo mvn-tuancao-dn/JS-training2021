@@ -16,9 +16,20 @@ body {
     text-transform: uppercase;
 }
 .section-question .answer {
-    max-width: 70%;
+    max-width: 100%;
     margin: 1em 0;
     background-color: #f1f2f3;
     border: 1px solid #e5e5e5;
     padding: 0 10px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+td, th {
+    border: 1px solid #111010;
+    padding: 8px;
+}
+th {
+    text-align: center;
 }
